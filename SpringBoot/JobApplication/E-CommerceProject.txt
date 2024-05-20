@@ -1,0 +1,49 @@
+npm install @mui/material @emotion/react @emotion/styled
+
+npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
+
+npm install -D tailwindcss
+npx tailwindcss init
+
+Replace code of tailwind.config.cs
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+putin index.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+Implementing UI - Nav bar
+
+need to go tailwind UI
+https://tailwindui.com/
+
+Scroll down , go into Ecommerce Section ---Store Navigation
+npm i @heroicons/react
+npm i @headlessui/react
+
+npm i react-alice-carousel
+https://maxmarinich.github.io/react-alice-carousel/
+
+-----sackeoverflow to find react auto funtions
+14
+
+ES7 React snippets extension
+
+Go to the extension search bar in Vscode and search the ES7 React snippets extension and install
+
+Then type rafce
+
+https://www.ethnicplus.in/ - carousel data pic from here
+-----
+const items = mainCarouselData.map((item)=> <img className='cursor=pointer' role='presentation' src={item.image} alt=" "/>)

@@ -1,0 +1,278 @@
+.back-button{
+    margin-right: 12px;
+    padding-top: 9px;
+    padding-left: 6px;
+    padding-bottom: 9px;
+    padding-right: 6px;
+}
+
+a{
+    margin-right: 5px;
+}
+
+.next-button{
+    margin-left: 7px;
+    padding-top: 9px;
+    padding-left: 6px;
+    padding-bottom: 9px;
+    padding-right: 6px;
+}
+
+.stretch-button{
+    background-color: green;
+    border: none;
+    padding-right: 12px;
+    padding-top: 8px;
+    padding-left: 12px;
+    padding-bottom: 8px;
+    color: white;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+    margin-bottom : 12px ;
+}
+
+.stretch-button:hover{
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    padding-right: 25px;
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-bottom: 15px;
+}
+
+.shadow-button{
+    background-color: green;
+    border: none;
+    padding-right: 12px;
+    padding-top: 8px;
+    padding-left: 12px;
+    padding-bottom: 8px;
+    color: white;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+    margin-bottom: 12px;
+}
+
+.shadow-button:hover{
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    margin: 5px 5px 5px 5px;
+}
+
+.one-button{
+    background-color: green;
+    color: white;
+    border: none;
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-left: 15px;
+    padding-bottom: 8px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.one-button:hover{
+    padding-left: 18px;
+    padding-right: 18px;
+
+}
+
+.two-button{
+    background-color: green;
+    color: white;
+    border: none;
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-left: 15px;
+    padding-bottom: 8px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.two-button:hover{
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.three-button{
+    background-color: green;
+    color: white;
+    border: none;
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-left: 15px;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+
+.three-button:hover{
+    padding-left: 18px;
+    padding-right: 18px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+
+.Tahoma-Font{
+    font-family: Tahoma;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.offer-announcement{
+    font-size: 30px;
+    font-family: Arial;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.offer-details{
+    margin-top: 0;
+    color: red;
+    font-family: Arial;
+    font-style: italic;
+}
+
+.course{
+    font-family: verdana;
+    font-weight: bold;
+    font-size: medium;
+    margin-bottom: 5px;
+}
+.course-stats{
+    margin-top: 0;
+    color: rgb(96,96,96);
+    font-family: Verdana;
+
+}
+
+.Course-description{
+    font-family: Verdana;
+    width: 280px;
+    
+}
+
+.GetStarted-Button{
+    background-color: green;
+    color: white;
+    border-radius: 4px;
+    font-family: Verdana;
+    padding: 9px 15px 9px 15px;
+    border: none;
+}
+
+.shopping{
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    font-family: Arial;
+    margin-bottom: 20px;
+}
+
+.shoppingDetails{
+    text-align: center;
+    font-family: Arial;
+    margin-top: 0;
+}
+
+.learn-link{
+    color: rgb(72, 126, 243);
+    text-align: center;
+    font-family: Arial;
+}
+
+.new{
+    color: orange;
+    font-family: Arial;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.MacDetail{
+    margin-top: 0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial;
+    margin-bottom: 10px;
+}
+
+.MacDescription{
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 0 ;
+    margin-bottom: 10px;
+}
+
+.MacPrice{
+    font-family: Arial;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.buy-button{
+    background-color: rgb(19, 107, 223);
+    color: white;
+    border-radius: 20px;
+    padding: 8px 16px 8px 16px;
+    border: none;
+    margin-left: 600px;
+    margin-top: 0;
+}
+
+.amount{
+    margin-top: 0;
+    font-family: Arial;
+    font-size: x-large;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.amountCurrency{
+    margin-top: 0;
+    font-size: medium;
+    color: rgb(113, 112, 112);
+    margin-left: 5px;
+    font-family: Arial;
+    margin-bottom: 0;
+}
+
+.amountdetail{
+    margin-top: 0;
+    color: green;
+    font-family: Arial;
+}
+
+.amountstats{
+    color: rgb(96, 95, 95);
+    font-family: Arial;
+}
+
+.amountloss{
+    color: red;
+    font-family: Arial;
+}
+
+.FCCLink{
+    font-weight: 700;
+    font-family: Arial;
+}
+
+.FCCId{
+    color: grey;
+    font-family: 100;
+}
+
+.FCCDecription{
+    font-family: Arial;
+    width: 500px;
+}
+
+.FCCContact{
+    font-family: Arial;
+}
+
+.FCCLinkId{
+    color: rgb(135, 200, 230);
+}

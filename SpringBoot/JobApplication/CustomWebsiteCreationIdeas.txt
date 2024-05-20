@@ -1,0 +1,47 @@
+Decor Form Furnishing -- 
+
+https://www.ddecorhomefabrics.com/
+https://nirmals.com/ - carousel used -- but basic one
+https://designformfurnishings.com/
+
+Certainly! Here's a breakdown of the project directories you could have for building an application with the specified features:
+
+frontend/:
+src/
+components/: Contains reusable React components.
+Carousel/: Components related to the React carousel.
+Product/: Components for displaying product information.
+Cart/: Components for managing the shopping cart.
+Checkout/: Components for the checkout process.
+Navbar/: Components for the navigation bar.
+Footer/: Components for the footer section.
+pages/: Contains React components for each page of the website.
+Home.js: Home page component.
+ProductList.js: Component for displaying a list of products.
+ProductDetail.js: Component for displaying detailed information about a product.
+Cart.js: Component for managing the shopping cart.
+Checkout.js: Component for the checkout process.
+styles/: Contains CSS or Tailwind CSS files for styling components.
+utils/: Utility functions or constants used throughout the frontend.
+App.js: Main component that defines routes and layout.
+index.js: Entry point of the React application.
+backend/:
+src/
+main/
+java/com/example/application/: Java packages for Spring Boot backend.
+config/: Configuration classes for Spring Boot.
+controller/: Controller classes for handling HTTP requests.
+model/: Entity classes representing database tables.
+repository/: Repository interfaces for database operations.
+service/: Service classes for business logic.
+resources/: Configuration files and static resources.
+application.properties: Configuration file for Spring Boot.
+test/: Contains test classes for backend components.
+public/: Contains public assets such as images and favicon.
+node_modules/: Contains dependencies installed via npm or yarn.
+package.json: Configuration file for Node.js dependencies.
+package-lock.json or yarn.lock: Lock files for specifying exact versions of dependencies.
+README.md: Documentation for setting up and running the project.
+
+
+

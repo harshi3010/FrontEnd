@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .addtocart{
+                background-color: yellow;
+                border: black;
+                border : 3px solid;
+                padding: 5px 12px;
+                margin-right: 5px;
+                font-size: 16px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .buynow{
+                background-color: orange;
+                border: black;
+                border: 3px solid;
+                padding: 5px 12px;
+                font-size: 16px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Adults Plain Cotton T-Shirt</p>
+        <p>Price: $7.99</p>
+        <button class="addtocart" 
+            onclick="
+            alert('Added');
+            ">
+            Add to cart
+        </button>
+        <button class="buynow"
+            onclick="
+            console.log('Loading...');
+            alert('Purchased');
+            "
+            >Buy now
+        </button>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+.model{
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+.Order{
+    margin-top : 0;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+.delivery{
+    text-decoration: underline;
+}

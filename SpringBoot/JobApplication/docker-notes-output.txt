@@ -1,0 +1,1295 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\FrontEnd\SpringBoot\JobApplication> ./mnvw spring-boot:build-image "-Dspring-boot.build-image.imageName=harshada3010/jobappimage"
+./mnvw : The term './mnvw' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a 
+path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ./mnvw spring-boot:build-image "-Dspring-boot.build-image.imageName=h ...
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (./mnvw:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\FrontEnd\SpringBoot\JobApplication> ./mvnw spring-boot:build-image "-Dspring-boot.build-image.imageName=harshada3010/jobappimage"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.embark:JobApplication >----------------------
+[INFO] Building JobApplication 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.4:build-image (default-cli) > package @ JobApplication >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ JobApplication ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO]
+[INFO] --- compiler:3.11.0:compile (default-compile) @ JobApplication ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ JobApplication ---
+[INFO] skip non existing resourceDirectory C:\FrontEnd\SpringBoot\JobApplication\src\test\resources
+[INFO]
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ JobApplication ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- surefire:3.1.2:test (default-test) @ JobApplication ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.embark.JobApplication.JobApplicationTests
+11:16:30.839 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for tes
+t class [com.embark.JobApplication.JobApplicationTests]: JobApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:16:31.167 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.embark.JobApplication.JobApplication for test class com.embark.JobApplication.JobApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2024-04-17T11:16:32.466+05:30  INFO 8152 --- [JobApplication] [           main] c.e.JobApplication.JobApplicationTests   : Starting JobApplicationTests using Java 21.0.1 with PID 8152 (started by HP in C:\FrontEnd\SpringBoot\JobApplication)
+2024-04-17T11:16:32.466+05:30  INFO 8152 --- [JobApplication] [           main] c.e.JobApplication.JobApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2024-04-17T11:16:35.636+05:30  INFO 8152 --- [JobApplication] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-17T11:16:35.826+05:30  INFO 8152 --- [JobApplication] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 164 ms. Found 3 JPA repository interfaces.
+2024-04-17T11:16:38.201+05:30  INFO 8152 --- [JobApplication] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-17T11:16:38.501+05:30  INFO 8152 --- [JobApplication] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-17T11:16:38.676+05:30  INFO 8152 --- [JobApplication] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-17T11:16:39.656+05:30  INFO 8152 --- [JobApplication] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-17T11:16:39.781+05:30  INFO 8152 --- [JobApplication] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-17T11:16:40.424+05:30  INFO 8152 --- [JobApplication] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-04-17T11:16:40.424+05:30  INFO 8152 --- [JobApplication] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.    
+2024-04-17T11:16:42.918+05:30  INFO 8152 --- [JobApplication] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table company (id bigint generated by default as identity, description varchar(255), name varchar(255), primary key (id))
+Hibernate: create table job (id bigint generated by default as identity, description varchar(255), location varchar(255), max_salary varchar(255), min_salary varchar(255), title varchar(255), company_id bigint, primary key (id))
+Hibernate: create table review (id bigint generated by default as identity, description varchar(255), rating float(53) not null, title varchar(255), company_id bigint, primary key (id))
+Hibernate: alter table if exists job add constraint FK5q04favsasq8y70bsei7wv8fc foreign key (company_id) references company
+Hibernate: alter table if exists review add constraint FK1r7rw4wp2mtlsn758pdi24qdx foreign key (company_id) references company
+2024-04-17T11:16:43.080+05:30  INFO 8152 --- [JobApplication] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-17T11:16:45.505+05:30  WARN 8152 --- [JobApplication] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-17T11:16:48.082+05:30  INFO 8152 --- [JobApplication] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-04-17T11:16:48.259+05:30  INFO 8152 --- [JobApplication] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2024-04-17T11:16:48.591+05:30  INFO 8152 --- [JobApplication] [           main] c.e.JobApplication.JobApplicationTests   : Started JobApplicationTests in 16.952 seconds (process running for 19.766)
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (C:\Users\HP\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.12\byte-buddy-agent-1.14.12.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.26 s -- in com.embark.JobApplication.JobApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ JobApplication ---
+[INFO] 
+[INFO] --- spring-boot:3.2.4:repackage (repackage) @ JobApplication ---
+[INFO] Replacing main artifact C:\FrontEnd\SpringBoot\JobApplication\target\JobApplication-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO]
+[INFO] <<< spring-boot:3.2.4:build-image (default-cli) < package @ JobApplication <<<
+[INFO]
+[INFO]
+[INFO] --- spring-boot:3.2.4:build-image (default-cli) @ JobApplication ---
+[WARNING]  Parameter 'imageName' (user property 'spring-boot.build-image.imageName') is read-only, must not be used in configuration
+[INFO] Building image 'docker.io/harshada3010/jobappimage:latest'
+[INFO]
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 100%
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  32.006 s
+[INFO] Finished at: 2024-04-17T11:16:54+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.2.4:build-image (default-cli) on project JobApplication: Execution default-cli of goal org.springframework.boot:spring-boot-maven-plugin:3.2.4:build-image failed: Docker API call to '//./pipe/docker_engine/v1.24/images/create?fromImage=docker.io%2Fpaketobuildpacks%2Fbuilder-jammy-base%3Alatest' failed with status code 500 "Internal Server Error" -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+PS C:\FrontEnd\SpringBoot\JobApplication> ./mvnw spring-boot:build-image "-Dspring-boot.build-image.imageName=harshada3010/jobappimage"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.embark:JobApplication >----------------------
+[INFO] Building JobApplication 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.4:build-image (default-cli) > package @ JobApplication >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ JobApplication ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO]
+[INFO] --- compiler:3.11.0:compile (default-compile) @ JobApplication ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ JobApplication ---
+[INFO] skip non existing resourceDirectory C:\FrontEnd\SpringBoot\JobApplication\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ JobApplication ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- surefire:3.1.2:test (default-test) @ JobApplication ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.embark.JobApplication.JobApplicationTests
+11:19:50.540 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for tes
+t class [com.embark.JobApplication.JobApplicationTests]: JobApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:19:50.860 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.embark.JobApplication.JobApplication for test class com.embark.JobApplication.JobApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2024-04-17T11:19:52.003+05:30  INFO 12664 --- [JobApplication] [           main] c.e.JobApplication.JobApplicationTests   : Starting JobApplicationTests using Java 21.0.1 with PID 12664 (started by HP in C:\FrontEnd\SpringBoot\JobApplication)
+2024-04-17T11:19:52.003+05:30  INFO 12664 --- [JobApplication] [           main] c.e.JobApplication.JobApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2024-04-17T11:19:54.984+05:30  INFO 12664 --- [JobApplication] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-17T11:19:55.153+05:30  INFO 12664 --- [JobApplication] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 148 ms. Found 3 JPA repository interfaces.
+2024-04-17T11:19:57.147+05:30  INFO 12664 --- [JobApplication] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-17T11:19:57.372+05:30  INFO 12664 --- [JobApplication] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-17T11:19:57.513+05:30  INFO 12664 --- [JobApplication] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-17T11:19:58.446+05:30  INFO 12664 --- [JobApplication] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-17T11:19:58.532+05:30  INFO 12664 --- [JobApplication] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-17T11:19:59.024+05:30  INFO 12664 --- [JobApplication] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-04-17T11:19:59.035+05:30  INFO 12664 --- [JobApplication] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.   
+2024-04-17T11:20:01.746+05:30  INFO 12664 --- [JobApplication] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table company (id bigint generated by default as identity, description varchar(255), name varchar(255), primary key (id))
+Hibernate: create table job (id bigint generated by default as identity, description varchar(255), location varchar(255), max_salary varchar(255), min_salary varchar(255), title varchar(255), company_id bigint, primary key (id))
+Hibernate: create table review (id bigint generated by default as identity, description varchar(255), rating float(53) not null, title varchar(255), company_id bigint, primary key (id))
+Hibernate: alter table if exists job add constraint FK5q04favsasq8y70bsei7wv8fc foreign key (company_id) references company
+Hibernate: alter table if exists review add constraint FK1r7rw4wp2mtlsn758pdi24qdx foreign key (company_id) references company
+2024-04-17T11:20:01.907+05:30  INFO 12664 --- [JobApplication] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-17T11:20:03.642+05:30  WARN 12664 --- [JobApplication] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-17T11:20:05.754+05:30  INFO 12664 --- [JobApplication] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-04-17T11:20:05.885+05:30  INFO 12664 --- [JobApplication] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2024-04-17T11:20:06.109+05:30  INFO 12664 --- [JobApplication] [           main] c.e.JobApplication.JobApplicationTests   : Started JobApplicationTests in 14.8 seconds (process running for 17.657)
+WARNING: A Java agent has been loaded dynamically (C:\Users\HP\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.12\byte-buddy-agent-1.14.12.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.59 s -- in com.embark.JobApplication.JobApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ JobApplication ---
+[INFO] 
+[INFO] --- spring-boot:3.2.4:repackage (repackage) @ JobApplication ---
+[INFO] Replacing main artifact C:\FrontEnd\SpringBoot\JobApplication\target\JobApplication-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to C:\FrontEnd\SpringBoot\JobApplication\target\JobApplication-0.0.1-SNAPSHOT.jar.original
+[INFO]
+[INFO] <<< spring-boot:3.2.4:build-image (default-cli) < package @ JobApplication <<<
+[INFO]
+[INFO] 
+[INFO] --- spring-boot:3.2.4:build-image (default-cli) @ JobApplication ---
+[WARNING]  Parameter 'imageName' (user property 'spring-boot.build-image.imageName') is read-only, must not be used in configuration
+[INFO] Building image 'docker.io/harshada3010/jobappimage:latest'
+[INFO]
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 0%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 0%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 0%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 1%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 1%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 1%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 1%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 1%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 1%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 1%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 1%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 1%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 2%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 2%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 2%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 3%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 3%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 3%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 3%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 3%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 3%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 3%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 3%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 3%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 3%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 3%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 3%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 3%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 3%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 3%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 3%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 4%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 5%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 5%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 5%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 5%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 6%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 6%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 6%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 6%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 6%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 6%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 7%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 7%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 7%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 7%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 7%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 7%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 7%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 7%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 7%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 8%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 8%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 8%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 8%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 8%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 9%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 9%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 9%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 9%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 10%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 10%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 10%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 10%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 10%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 10%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 11%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 11%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 11%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 11%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 11%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 11%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 11%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 12%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 12%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 12%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 12%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 12%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 13%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 13%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 13%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 14%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 14%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 15%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 15%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 15%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 15%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 15%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 15%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 15%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 15%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 16%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 16%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 16%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 16%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 16%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 16%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 16%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 16%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 16%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 16%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 16%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 17%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 17%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 18%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 18%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 18%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 18%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 18%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 18%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 19%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 19%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 19%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 19%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 20%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 20%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 21%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 21%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 23%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 23%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 23%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 24%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 24%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 24%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 25%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 25%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 25%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 26%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 26%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 26%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 26%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 26%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 27%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 27%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 28%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 28%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 28%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 29%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 29%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 29%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 30%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 30%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 30%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 31%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 31%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 31%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 31%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 31%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 33%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 36%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 39%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 40%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 42%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 43%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 45%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 48%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 51%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 55%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 59%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 62%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 65%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 65%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 69%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 71%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 73%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 75%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 80%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 81%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 81%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 84%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 86%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 88%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 90%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 91%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 92%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 93%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 95%
+[INFO]  > Pulling builder image 'docker.io/paketobuildpacks/builder-jammy-base:latest' 100%
+[INFO]  > Pulled builder image 'paketobuildpacks/builder-jammy-base@sha256:4436f7b59eae2d7e389512d44417c7bd85677bf8f8d376c12502140d2e364d5a'
+[INFO]  > Pulling run image 'docker.io/paketobuildpacks/run-jammy-base:latest' 10%
+[INFO]  > Pulling run image 'docker.io/paketobuildpacks/run-jammy-base:latest' 23%
+[INFO]  > Pulling run image 'docker.io/paketobuildpacks/run-jammy-base:latest' 28%
+[INFO]  > Pulling run image 'docker.io/paketobuildpacks/run-jammy-base:latest' 28%
+[INFO]  > Pulling run image 'docker.io/paketobuildpacks/run-jammy-base:latest' 36%
+[INFO]  > Pulling run image 'docker.io/paketobuildpacks/run-jammy-base:latest' 36%
+[INFO]  > Pulling run image 'docker.io/paketobuildpacks/run-jammy-base:latest' 100%
+[INFO]  > Pulled run image 'paketobuildpacks/run-jammy-base@sha256:76b52ce61a3e983207a045668f323bd1e736e60afe638ce4a11f577daef8842a'
+[INFO]  > Executing lifecycle version v0.19.3
+[INFO]  > Using build cache volume 'pack-cache-899030479f75.build'
+[INFO]
+[INFO]  > Running creator
+[INFO]     [creator]     ===> ANALYZING
+[INFO]     [creator]     Image with name "docker.io/harshada3010/jobappimage:latest" not found
+[INFO]     [creator]     ===> DETECTING
+[INFO]     [creator]     6 of 26 buildpacks participating
+[INFO]     [creator]     paketo-buildpacks/ca-certificates   3.6.8
+[INFO]     [creator]     paketo-buildpacks/bellsoft-liberica 10.5.5
+[INFO]     [creator]     paketo-buildpacks/syft              1.45.0
+[INFO]     [creator]     paketo-buildpacks/executable-jar    6.8.5
+[INFO]     [creator]     paketo-buildpacks/dist-zip          5.6.10
+[INFO]     [creator]     paketo-buildpacks/spring-boot       5.27.11
+[INFO]     [creator]     ===> RESTORING
+[INFO]     [creator]     ===> BUILDING
+[INFO]     [creator]
+[INFO]     [creator]     Paketo Buildpack for CA Certificates 3.6.8
+[INFO]     [creator]       https://github.com/paketo-buildpacks/ca-certificates
+[INFO]     [creator]       Launch Helper: Contributing to layer
+[INFO]     [creator]         Creating /layers/paketo-buildpacks_ca-certificates/helper/exec.d/ca-certificates-helper
+[INFO]     [creator]     
+[INFO]     [creator]     Paketo Buildpack for BellSoft Liberica 10.5.5
+[INFO]     [creator]       https://github.com/paketo-buildpacks/bellsoft-liberica
+[INFO]     [creator]       Build Configuration:
+[INFO]     [creator]         $BP_JVM_JLINK_ARGS           --no-man-pages --no-header-files --strip-debug --compress=1  configure custom link arguments (--output must be omitted)
+[INFO]     [creator]         $BP_JVM_JLINK_ENABLED        false                                                        enables running jlink tool to generate custom JRE
+[INFO]     [creator]         $BP_JVM_TYPE                 JRE                                                          the JVM type - JDK or JRE
+[INFO]     [creator]         $BP_JVM_VERSION              17                                                           the Java version
+[INFO]     [creator]       Launch Configuration:
+[INFO]     [creator]         $BPL_DEBUG_ENABLED           false                                                        enables Java remote debugging support  
+[INFO]     [creator]         $BPL_DEBUG_PORT              8000                                                         configure the remote debugging port    
+[INFO]     [creator]         $BPL_DEBUG_SUSPEND           false                                                        configure whether to suspend execution until a debugger has attached
+[INFO]     [creator]         $BPL_HEAP_DUMP_PATH                                                                       write heap dumps on error to this path 
+[INFO]     [creator]         $BPL_JAVA_NMT_ENABLED        true                                                         enables Java Native Memory Tracking (NMT)
+[INFO]     [creator]         $BPL_JAVA_NMT_LEVEL          summary                                                      configure level of NMT, summary or detail
+[INFO]     [creator]         $BPL_JFR_ARGS                                                                             configure custom Java Flight Recording (JFR) arguments
+[INFO]     [creator]         $BPL_JFR_ENABLED             false                                                        enables Java Flight Recording (JFR)    
+[INFO]     [creator]         $BPL_JMX_ENABLED             false                                                        enables Java Management Extensions (JMX)
+[INFO]     [creator]         $BPL_JMX_PORT                5000                                                         configure the JMX port
+[INFO]     [creator]         $BPL_JVM_HEAD_ROOM           0                                                            the headroom in memory calculation     
+[INFO]     [creator]         $BPL_JVM_LOADED_CLASS_COUNT  35% of classes                                               the number of loaded classes in memory calculation
+[INFO]     [creator]         $BPL_JVM_THREAD_COUNT        250                                                          the number of threads in memory calculation
+[INFO]     [creator]         $JAVA_TOOL_OPTIONS                                                                        the JVM launch flags
+[INFO]     [creator]         Using Java version 21 extracted from MANIFEST.MF
+[INFO]     [creator]       BellSoft Liberica JRE 21.0.2: Contributing to layer
+[INFO]     [creator]         Downloading from https://github.com/bell-sw/Liberica/releases/download/21.0.2+14/bellsoft-jre21.0.2+14-linux-amd64.tar.gz        
+[INFO]     [creator]         Verifying checksum
+[INFO]     [creator]         Expanding to /layers/paketo-buildpacks_bellsoft-liberica/jre
+[INFO]     [creator]         Adding 137 container CA certificates to JVM truststore
+[INFO]     [creator]         Writing env.launch/BPI_APPLICATION_PATH.default
+[INFO]     [creator]         Writing env.launch/BPI_JVM_CACERTS.default
+[INFO]     [creator]         Writing env.launch/BPI_JVM_CLASS_COUNT.default
+[INFO]     [creator]         Writing env.launch/BPI_JVM_SECURITY_PROVIDERS.default
+[INFO]     [creator]         Writing env.launch/JAVA_HOME.default
+[INFO]     [creator]         Writing env.launch/JAVA_TOOL_OPTIONS.append
+[INFO]     [creator]         Writing env.launch/JAVA_TOOL_OPTIONS.delim
+[INFO]     [creator]         Writing env.launch/MALLOC_ARENA_MAX.default
+[INFO]     [creator]       Launch Helper: Contributing to layer
+[INFO]     [creator]         Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/active-processor-count
+[INFO]     [creator]         Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/java-opts
+[INFO]     [creator]         Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/jvm-heap
+[INFO]     [creator]         Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/link-local-dns
+[INFO]     [creator]         Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/memory-calculator
+[INFO]     [creator]         Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/security-providers-configurer
+[INFO]     [creator]         Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/jmx
+[INFO]     [creator]         Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/jfr
+[INFO]     [creator]         Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/openssl-certificate-loader
+[INFO]     [creator]         Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/security-providers-classpath-9
+[INFO]     [creator]         Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/debug-9
+[INFO]     [creator]         Creating /layers/paketo-buildpacks_bellsoft-liberica/helper/exec.d/nmt
+[INFO]     [creator]       Java Security Properties: Contributing to layer
+[INFO]     [creator]         Writing env.launch/JAVA_SECURITY_PROPERTIES.default
+[INFO]     [creator]         Writing env.launch/JAVA_TOOL_OPTIONS.append
+[INFO]     [creator]         Writing env.launch/JAVA_TOOL_OPTIONS.delim
+[INFO]     [creator]     
+[INFO]     [creator]     Paketo Buildpack for Syft 1.45.0
+[INFO]     [creator]       https://github.com/paketo-buildpacks/syft
+[INFO]     [creator]         Downloading from https://github.com/anchore/syft/releases/download/v0.105.0/syft_0.105.0_linux_amd64.tar.gz
+[INFO]     [creator]         Verifying checksum
+[INFO]     [creator]         Writing env.build/SYFT_CHECK_FOR_APP_UPDATE.default
+[INFO]     [creator]     
+[INFO]     [creator]     Paketo Buildpack for Executable JAR 6.8.5
+[INFO]     [creator]       https://github.com/paketo-buildpacks/executable-jar
+[INFO]     [creator]       Command "packages" is deprecated, use `syft scan` instead
+[INFO]     [creator]       Class Path: Contributing to layer
+[INFO]     [creator]         Writing env/CLASSPATH.delim
+[INFO]     [creator]         Writing env/CLASSPATH.prepend
+[INFO]     [creator]       Process types:
+[INFO]     [creator]         executable-jar: java org.springframework.boot.loader.launch.JarLauncher (direct)
+[INFO]     [creator]         task:           java org.springframework.boot.loader.launch.JarLauncher (direct)
+[INFO]     [creator]         web:            java org.springframework.boot.loader.launch.JarLauncher (direct)
+[INFO]     [creator]     
+[INFO]     [creator]     Paketo Buildpack for Spring Boot 5.27.11
+[INFO]     [creator]       https://github.com/paketo-buildpacks/spring-boot
+[INFO]     [creator]       Build Configuration:
+[INFO]     [creator]         $BP_SPRING_CLOUD_BINDINGS_DISABLED   false  whether to contribute Spring Boot cloud bindings support
+[INFO]     [creator]         $BP_SPRING_CLOUD_BINDINGS_VERSION    1      default version of Spring Cloud Bindings library to contribute
+[INFO]     [creator]       Launch Configuration:
+[INFO]     [creator]         $BPL_SPRING_CLOUD_BINDINGS_DISABLED  false  whether to auto-configure Spring Boot environment properties from bindings
+[INFO]     [creator]         $BPL_SPRING_CLOUD_BINDINGS_ENABLED   true   Deprecated - whether to auto-configure Spring Boot environment properties from bindings
+[INFO]     [creator]       Creating slices from layers index
+[INFO]     [creator]         dependencies (46.9 MB)
+[INFO]     [creator]         spring-boot-loader (446.0 KB)
+[INFO]     [creator]         snapshot-dependencies (0.0 B)
+[INFO]     [creator]         application (108.9 KB)
+[INFO]     [creator]       Launch Helper: Contributing to layer
+[INFO]     [creator]         Creating /layers/paketo-buildpacks_spring-boot/helper/exec.d/spring-cloud-bindings
+[INFO]     [creator]       Spring Cloud Bindings 2.0.3: Contributing to layer
+[INFO]     [creator]         Downloading from https://repo1.maven.org/maven2/org/springframework/cloud/spring-cloud-bindings/2.0.3/spring-cloud-bindings-2.0.3.jar
+[INFO]     [creator]         Verifying checksum
+[INFO]     [creator]         Copying to /layers/paketo-buildpacks_spring-boot/spring-cloud-bindings
+[INFO]     [creator]       Web Application Type: Contributing to layer
+[INFO]     [creator]         Servlet web application detected
+[INFO]     [creator]         Writing env.launch/BPL_JVM_THREAD_COUNT.default
+[INFO]     [creator]       4 application slices
+[INFO]     [creator]       Image labels:
+[INFO]     [creator]         org.opencontainers.image.title
+[INFO]     [creator]         org.opencontainers.image.version
+[INFO]     [creator]         org.springframework.boot.version
+[INFO]     [creator]     ===> EXPORTING
+[INFO]     [creator]     Adding layer 'paketo-buildpacks/ca-certificates:helper'
+[INFO]     [creator]     Adding layer 'paketo-buildpacks/bellsoft-liberica:helper'
+[INFO]     [creator]     Adding layer 'paketo-buildpacks/bellsoft-liberica:java-security-properties'
+[INFO]     [creator]     Adding layer 'paketo-buildpacks/bellsoft-liberica:jre'
+[INFO]     [creator]     Adding layer 'paketo-buildpacks/executable-jar:classpath'
+[INFO]     [creator]     Adding layer 'paketo-buildpacks/spring-boot:helper'
+[INFO]     [creator]     Adding layer 'paketo-buildpacks/spring-boot:spring-cloud-bindings'
+[INFO]     [creator]     Adding layer 'paketo-buildpacks/spring-boot:web-application-type'
+[INFO]     [creator]     Adding layer 'buildpacksio/lifecycle:launch.sbom'
+[INFO]     [creator]     Adding 5/5 app layer(s)
+[INFO]     [creator]     Adding layer 'buildpacksio/lifecycle:launcher'
+[INFO]     [creator]     Adding layer 'buildpacksio/lifecycle:config'
+[INFO]     [creator]     Adding layer 'buildpacksio/lifecycle:process-types'
+[INFO]     [creator]     Adding label 'io.buildpacks.lifecycle.metadata'
+[INFO]     [creator]     Adding label 'io.buildpacks.build.metadata'
+[INFO]     [creator]     Adding label 'io.buildpacks.project.metadata'
+[INFO]     [creator]     Adding label 'org.opencontainers.image.title'
+[INFO]     [creator]     Adding label 'org.opencontainers.image.version'
+[INFO]     [creator]     Adding label 'org.springframework.boot.version'
+[INFO]     [creator]     Setting default process type 'web'
+[INFO]     [creator]     *** Images (f776c38d1aa4):
+[INFO]     [creator]           docker.io/harshada3010/jobappimage:latest
+[INFO]     [creator]     Adding cache layer 'paketo-buildpacks/syft:syft'
+[INFO]     [creator]     Adding cache layer 'buildpacksio/lifecycle:cache.sbom'
+[INFO]
+[INFO] Successfully built image 'docker.io/harshada3010/jobappimage:latest'
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  10:01 min
+[INFO] Finished at: 2024-04-17T11:29:44+05:30
+[INFO] ------------------------------------------------------------------------
+PS C:\FrontEnd\SpringBoot\JobApplication> docker push harshada3010/jobappimage
+Using default tag: latest
+The push refers to repository [docker.io/harshada3010/jobappimage]
+1dc94a70dbaa: Preparing                                                                                                                                       
+a881a77ec560: Preparing                                                                                                                                       
+92f1d3712a46: Preparing                                                                                                                                       
+5f70bf18a086: Preparing                                                                                                                                       
+ed132bda8f49: Preparing                                                                                                                                       
+6fa6b23cfe6b: Preparing                                                                                                                                       
+cff536778a3a: Pushed
+366ce7d1a7f9: Pushed
+ce4e86e0307e: Pushed
+fbf24054eaa8: Pushed
+417e5bfc3c82: Pushed
+bea0a3dc2651: Pushed
+000f6b628e38: Pushed
+322d654f5f26: Mounted from paketobuildpacks/run-jammy-base
+ec848b265de6: Mounted from paketobuildpacks/run-jammy-base
+d1a1307fb5b1: Mounted from paketobuildpacks/run-jammy-base
+e0a9f5911802: Mounted from paketobuildpacks/run-jammy-base
+latest: digest: sha256:340375deada6c76eb60b08b448645d4959f3278176eadb9b4f6b4c99903aaa59 size: 4707
+PS C:\FrontEnd\SpringBoot\JobApplication> docker images
+REPOSITORY                            TAG       IMAGE ID       CREATED        SIZE
+paketobuildpacks/run-jammy-base       latest    ec837947ea99   28 hours ago   106MB
+paketobuildpacks/builder-jammy-base   latest    1312b2c29b98   44 years ago   1.44GB
+harshada3010/jobappimage              latest    f776c38d1aa4   44 years ago   379MB
+PS C:\FrontEnd\SpringBoot\JobApplication> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+PS C:\FrontEnd\SpringBoot\JobApplication> docker run -p 8080:8080 harshada3010/jobappimage
+Setting Active Processor Count to 4
+Calculating JVM memory based on 2968360K available memory
+For more information on this calculation, see https://paketo.io/docs/reference/java-reference/#memory-calculator
+Calculated JVM Memory Configuration: -XX:MaxDirectMemorySize=10M -Xmx2343153K -XX:MaxMetaspaceSize=113206K -XX:ReservedCodeCacheSize=240M -Xss1M (Total Memory: 2968360K, Thread Count: 250, Loaded Class Count: 17573, Headroom: 0%)
+Enabling Java Native Memory Tracking
+Adding 137 container CA certificates to JVM truststore
+Spring Cloud Bindings Enabled
+Picked up JAVA_TOOL_OPTIONS: -Djava.security.properties=/layers/paketo-buildpacks_bellsoft-liberica/java-security-properties/java-security.properties -XX:+Exi
+tOnOutOfMemoryError -XX:ActiveProcessorCount=4 -XX:MaxDirectMemorySize=10M -Xmx2343153K -XX:MaxMetaspaceSize=113206K -XX:ReservedCodeCacheSize=240M -Xss1M -XX:+UnlockDiagnosticVMOptions -XX:NativeMemoryTracking=summary -XX:+PrintNMTStatistics -Dorg.springframework.cloud.bindings.boot.enable=true
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2024-04-17T06:37:11.345Z  INFO 1 --- [JobApplication] [           main] c.embark.JobApplication.JobApplication   : Starting JobApplication v0.0.1-SNAPSHOT using Java 21.0.2 with PID 1 (/workspace/BOOT-INF/classes started by cnb in /workspace)
+2024-04-17T06:37:11.353Z  INFO 1 --- [JobApplication] [           main] c.embark.JobApplication.JobApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-04-17T06:37:15.135Z  INFO 1 --- [JobApplication] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-17T06:37:15.286Z  INFO 1 --- [JobApplication] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 129 ms. Found 3 JPA repository interfaces.
+2024-04-17T06:37:17.185Z  INFO 1 --- [JobApplication] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-17T06:37:17.219Z  INFO 1 --- [JobApplication] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-17T06:37:17.220Z  INFO 1 --- [JobApplication] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-17T06:37:17.322Z  INFO 1 --- [JobApplication] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-17T06:37:17.327Z  INFO 1 --- [JobApplication] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5739 ms
+2024-04-17T06:37:17.661Z  INFO 1 --- [JobApplication] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-17T06:37:18.217Z  INFO 1 --- [JobApplication] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-04-17T06:37:18.224Z  INFO 1 --- [JobApplication] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-17T06:37:18.259Z  INFO 1 --- [JobApplication] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-04-17T06:37:18.735Z  INFO 1 --- [JobApplication] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-17T06:37:18.860Z  INFO 1 --- [JobApplication] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-17T06:37:18.942Z  INFO 1 --- [JobApplication] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-17T06:37:19.497Z  INFO 1 --- [JobApplication] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-17T06:37:21.686Z  INFO 1 --- [JobApplication] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table company (id bigint generated by default as identity, description varchar(255), name varchar(255), primary key (id))
+Hibernate: create table job (id bigint generated by default as identity, description varchar(255), location varchar(255), max_salary varchar(255), min_salary varchar(255), title varchar(255), company_id bigint, primary key (id))
+Hibernate: create table review (id bigint generated by default as identity, description varchar(255), rating float(53) not null, title varchar(255), company_id bigint, primary key (id))
+Hibernate: alter table if exists job add constraint FK5q04favsasq8y70bsei7wv8fc foreign key (company_id) references company
+Hibernate: alter table if exists review add constraint FK1r7rw4wp2mtlsn758pdi24qdx foreign key (company_id) references company
+2024-04-17T06:37:21.856Z  INFO 1 --- [JobApplication] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-17T06:37:23.152Z  WARN 1 --- [JobApplication] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-17T06:37:24.845Z  INFO 1 --- [JobApplication] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2024-04-17T06:37:25.056Z  INFO 1 --- [JobApplication] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-17T06:37:25.138Z  INFO 1 --- [JobApplication] [           main] c.embark.JobApplication.JobApplication   : Started JobApplication in 15.187 seconds (process running for 16.329)
+2024-04-17T06:38:50.963Z  INFO 1 --- [JobApplication] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-17T06:38:50.964Z  INFO 1 --- [JobApplication] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'   
+2024-04-17T06:38:50.969Z  INFO 1 --- [JobApplication] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+Hibernate: select j1_0.id,c1_0.id,c1_0.description,c1_0.name,j1_0.description,j1_0.location,j1_0.max_salary,j1_0.min_salary,j1_0.title from job j1_0 left join company c1_0 on c1_0.id=j1_0.company_id where j1_0.id=?
+Hibernate: select c1_0.id,c1_0.description,c1_0.name from company c1_0 where c1_0.id=?
+2024-04-17T06:38:51.483Z ERROR 1 --- [JobApplication] [nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherSe
+rvlet] in context with path [] threw exception [Request processing failed: org.springframework.orm.jpa.JpaObjectRetrievalFailureException: Unable to find com.embark.JobApplication.company.Company with id 1] with root cause
+
+jakarta.persistence.EntityNotFoundException: Unable to find com.embark.JobApplication.company.Company with id 1
+        at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$JpaEntityNotFoundDelegate.handleEntityNotFound(EntityManagerFactoryBuilderImpl.java:191) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+        at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:212) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]        
+        at org.hibernate.event.internal.DefaultLoadEventListener.loadWithRegularProxy(DefaultLoadEventListener.java:290) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+        at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:242) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final] 
+        at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:111) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]    
+        at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:68) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]       
+        at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+        at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1222) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+        at org.hibernate.internal.SessionImpl.internalLoad(SessionImpl.java:1068) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+        at org.hibernate.type.EntityType.resolveIdentifier(EntityType.java:694) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+        at org.hibernate.type.EntityType.resolve(EntityType.java:417) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+        at org.hibernate.type.EntityType.replace(EntityType.java:340) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+        at org.hibernate.type.AbstractType.replace(AbstractType.java:125) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+        at org.hibernate.type.TypeHelper.replace(TypeHelper.java:154) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+        at org.hibernate.event.internal.DefaultMergeEventListener.copyValues(DefaultMergeEventListener.java:614) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+        at org.hibernate.event.internal.DefaultMergeEventListener.entityIsTransient(DefaultMergeEventListener.java:296) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+        at org.hibernate.event.internal.DefaultMergeEventListener.entityIsDetached(DefaultMergeEventListener.java:418) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+        at org.hibernate.event.internal.DefaultMergeEventListener.merge(DefaultMergeEventListener.java:208) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]     
+        at org.hibernate.event.internal.DefaultMergeEventListener.doMerge(DefaultMergeEventListener.java:146) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]   
+        at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:130) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]   
+        at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:84) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]    
+        at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+        at org.hibernate.internal.SessionImpl.fireMerge(SessionImpl.java:847) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+        at org.hibernate.internal.SessionImpl.merge(SessionImpl.java:833) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+        at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+        at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:364) ~[spring-orm-6.1.5.jar:6.1.5]
+        at jdk.proxy2/jdk.proxy2.$Proxy128.merge(Unknown Source) ~[na:na]
+        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+        at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+        at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:319) ~[spring-orm-6.1.5.jar:6.1.5]
+        at jdk.proxy2/jdk.proxy2.$Proxy128.merge(Unknown Source) ~[na:na]
+        at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:621) ~[spring-data-jpa-3.2.4.jar:3.2.4]
+        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+        at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+        at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:351) ~[spring-aop-6.1.5.jar:6.1.5]
+        at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277) ~[spring-data-commons-3.2.4.jar:3.2.4]
+        at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170) ~[spring-data-commons-3.2.4.jar:3.2.4]
+        at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-3.2.4.jar:3.2.4]
+        at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516) ~[spring-data-commons-3.2.4.jar:3.2.4]
+        at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-3.2.4.jar:3.2.4]
+        at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628) ~[spring-data-commons-3.2.4.jar:3.2.4]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.5.jar:6.1.5]
+        at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168) ~[spring-data-commons-3.2.4.jar:3.2.4]
+        at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143) ~[spring-data-commons-3.2.4.jar:3.2.4]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.5.jar:6.1.5]
+        at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70) ~[spring-data-commons-3.2.4.jar:3.2.4]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.5.jar:6.1.5]
+        at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-6.1.5.jar:6.1.5]
+        at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392) ~[spring-tx-6.1.5.jar:6.1.5]
+        at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.5.jar:6.1.5]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.5.jar:6.1.5]
+        at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-6.1.5.jar:6.1.5]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.5.jar:6.1.5]
+        at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164) ~[spring-data-jpa-3.2.4.jar:3.2.4]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.5.jar:6.1.5]
+        at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.1.5.jar:6.1.5]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.5.jar:6.1.5]
+        at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220) ~[spring-aop-6.1.5.jar:6.1.5]
+        at jdk.proxy2/jdk.proxy2.$Proxy134.save(Unknown Source) ~[na:na]
+        at com.embark.JobApplication.job.impl.JobServiceImpl.createJob(JobServiceImpl.java:37) ~[classes/:0.0.1-SNAPSHOT]
+        at com.embark.JobApplication.job.JobController.createJob(JobController.java:55) ~[classes/:0.0.1-SNAPSHOT]
+        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+        at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+        at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.5.jar:6.1.5]
+        at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.5.jar:6.1.5]      
+        at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.5.jar:6.1.5]
+        at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:925) ~[spring-webmvc-6.1.5.jar:6.1.5]
+        at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830) ~[spring-webmvc-6.1.5.jar:6.1.5]
+        at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.5.jar:6.1.5]
+        at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.5.jar:6.1.5]
+        at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.5.jar:6.1.5]
+        at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.5.jar:6.1.5]
+        at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.5.jar:6.1.5]
+        at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.19.jar:6.0]
+        at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.5.jar:6.1.5]
+        at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.19.jar:6.0]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.19.jar:10.1.19]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.5.jar:6.1.5]
+        at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.5.jar:6.1.5]
+        at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109) ~[spring-web-6.1.5.jar:6.1.5]    
+        at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.5.jar:6.1.5]
+        at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+        at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+Hibernate: select j1_0.id,j1_0.company_id,j1_0.description,j1_0.location,j1_0.max_salary,j1_0.min_salary,j1_0.title from job j1_0
+Hibernate: insert into company (description,name,id) values (?,?,default)
+Hibernate: select j1_0.id,c1_0.id,c1_0.description,c1_0.name,j1_0.description,j1_0.location,j1_0.max_salary,j1_0.min_salary,j1_0.title from job j1_0 left join company c1_0 on c1_0.id=j1_0.company_id where j1_0.id=?
+Hibernate: select c1_0.id,c1_0.description,c1_0.name from company c1_0 where c1_0.id=?
+Hibernate: insert into job (company_id,description,location,max_salary,min_salary,title,id) values (?,?,?,?,?,?,default)
+Hibernate: select j1_0.id,c1_0.id,c1_0.description,c1_0.name,j1_0.description,j1_0.location,j1_0.max_salary,j1_0.min_salary,j1_0.title from job j1_0 left join company c1_0 on c1_0.id=j1_0.company_id where j1_0.id=?
+Hibernate: select c1_0.id,c1_0.description,c1_0.name from company c1_0 where c1_0.id=?
+Hibernate: insert into job (company_id,description,location,max_salary,min_salary,title,id) values (?,?,?,?,?,?,default)
+Hibernate: select j1_0.id,j1_0.company_id,j1_0.description,j1_0.location,j1_0.max_salary,j1_0.min_salary,j1_0.title from job j1_0
+Hibernate: select c1_0.id,c1_0.description,c1_0.name from company c1_0 where c1_0.id=?
+Hibernate: select r1_0.company_id,r1_0.id,r1_0.description,r1_0.rating,r1_0.title from review r1_0 where r1_0.company_id=?
+2024-04-17T06:40:31.332Z  INFO 1 --- [JobApplication] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-04-17T06:40:31.360Z  INFO 1 --- [JobApplication] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-04-17T06:40:31.377Z  INFO 1 --- [JobApplication] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-17T06:40:31.387Z  INFO 1 --- [JobApplication] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-17T06:40:31.397Z  INFO 1 --- [JobApplication] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+Native Memory Tracking:
+
+Total: reserved=3059207866, committed=286207674
+       malloc: 53145274 #321353
+       mmap:   reserved=3006062592, committed=233062400
+
+-                 Java Heap (reserved=2401239040, committed=85983232)
+                            (mmap: reserved=2401239040, committed=85983232)
+
+-                     Class (reserved=102090428, committed=12371644)
+                            (classes #16807)
+                            (  instance classes #15532, array classes #1275)
+                            (malloc=1427132 #41505) (peak=1436692 #41432)
+                            (mmap: reserved=100663296, committed=10944512)
+                            (  Metadata:   )
+                            (    reserved=134217728, committed=68091904)
+                            (    used=67620104)
+                            (    waste=471800 =0.69%)
+                            (  Class space:)
+                            (    reserved=100663296, committed=10944512)
+                            (    used=10545624)
+                            (    waste=398888 =3.64%)
+
+-                    Thread (reserved=18939600, committed=1294032)
+                            (thread #19)
+                            (stack: reserved=18874368, committed=1228800)
+                            (malloc=41784 #137) (peak=87648 #243)
+                            (arena=23448 #41) (peak=1042816 #49)
+
+-                      Code (reserved=255387672, committed=20846616)
+                            (malloc=1755160 #8167) (at peak)
+                            (mmap: reserved=253632512, committed=19091456)
+
+-                        GC (reserved=89869660, committed=44649820)
+                            (malloc=9256284 #6023) (at peak)
+                            (mmap: reserved=80613376, committed=35393536)
+
+-                 GCCardSet (reserved=14928, committed=14928)
+                            (malloc=14928 #134) (peak=65120 #206)
+
+-                  Compiler (reserved=2823452, committed=2823452)
+                            (malloc=59420 #720) (peak=145000 #744)
+                            (arena=2764032 #18) (peak=50185720 #21)
+
+-                  Internal (reserved=835010, committed=835010)
+                            (malloc=798146 #23840) (peak=822413 #23918)
+                            (mmap: reserved=36864, committed=36864)
+
+-                    Symbol (reserved=28647946, committed=28647946)
+                            (malloc=26642906 #219801) (at peak)
+                            (arena=2005040 #1) (at peak)
+
+-    Native Memory Tracking (reserved=5223072, committed=5223072)
+                            (malloc=81424 #1434) (peak=84112 #1470)
+                            (tracking overhead=5141648)
+
+-        Shared class space (reserved=16777216, committed=12283904, readonly=0)
+                            (mmap: reserved=16777216, committed=12283904)
+
+-               Arena Chunk (reserved=979632, committed=979632)
+                            (malloc=979632 #240) (peak=51585792 #1211)
+
+-                   Tracing (reserved=337, committed=337)
+                            (malloc=337 #9) (peak=385 #10)
+
+-                Statistics (reserved=128, committed=128)
+                            (malloc=128 #2) (at peak)
+
+-                 Arguments (reserved=169, committed=169)
+                            (malloc=169 #5) (at peak)
+
+-                    Module (reserved=120512, committed=120512)
+                            (malloc=120512 #2908) (at peak)
+
+-                 Safepoint (reserved=8192, committed=8192)
+                            (mmap: reserved=8192, committed=8192)
+
+-           Synchronization (reserved=1691008, committed=1691008)
+                            (malloc=1691008 #16249) (peak=1691216 #16251)
+-            Serviceability (reserved=17152, committed=17152)
+
+-                 Metaspace (reserved=134540784, committed=68414960)
+                            (mmap: reserved=134217728, committed=68091904)
+
+-      String Deduplication (reserved=680, committed=680)
+                            (malloc=680 #8) (at peak)
+
+-           Object Monitors (reserved=1248, committed=1248)
+                            (malloc=1248 #6) (peak=3744 #18)
+
+PS C:\FrontEnd\SpringBoot\JobApplication> docker run -d -p 8080:8080 harshada3010/jobappimage
+b74065d76b7a53a92322fcecc0a290633ae54788aa4c230030e6c05b4841321a
+PS C:\FrontEnd\SpringBoot\JobApplication> docker ps
+CONTAINER ID   IMAGE                      COMMAND              CREATED          STATUS          PORTS                    NAMES
+b74065d76b7a   harshada3010/jobappimage   "/cnb/process/web"   16 seconds ago   Up 14 seconds   0.0.0.0:8080->8080/tcp   nice_dhawan
+PS C:\FrontEnd\SpringBoot\JobApplication> docker logs b74065d76b7a
+Setting Active Processor Count to 4
+Calculating JVM memory based on 2968268K available memory
+For more information on this calculation, see https://paketo.io/docs/reference/java-reference/#memory-calculator
+Calculated JVM Memory Configuration: -XX:MaxDirectMemorySize=10M -Xmx2343061K -XX:MaxMetaspaceSize=113206K -XX:ReservedCodeCacheSize=240M -Xss1M (Total Memory: 2968268K, Thread Count: 250, Loaded Class Count: 17573, Headroom: 0%)
+Enabling Java Native Memory Tracking
+Adding 137 container CA certificates to JVM truststore
+Spring Cloud Bindings Enabled
+Picked up JAVA_TOOL_OPTIONS: -Djava.security.properties=/layers/paketo-buildpacks_bellsoft-liberica/java-security-properties/java-security.properties -XX:+Exi
+tOnOutOfMemoryError -XX:ActiveProcessorCount=4 -XX:MaxDirectMemorySize=10M -Xmx2343061K -XX:MaxMetaspaceSize=113206K -XX:ReservedCodeCacheSize=240M -Xss1M -XX:+UnlockDiagnosticVMOptions -XX:NativeMemoryTracking=summary -XX:+PrintNMTStatistics -Dorg.springframework.cloud.bindings.boot.enable=true
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2024-04-17T06:41:29.933Z  INFO 1 --- [JobApplication] [           main] c.embark.JobApplication.JobApplication   : Starting JobApplication v0.0.1-SNAPSHOT using Java 21.0.2 with PID 1 (/workspace/BOOT-INF/classes started by cnb in /workspace)
+2024-04-17T06:41:29.939Z  INFO 1 --- [JobApplication] [           main] c.embark.JobApplication.JobApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-04-17T06:41:32.744Z  INFO 1 --- [JobApplication] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-17T06:41:32.892Z  INFO 1 --- [JobApplication] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 124 ms. Found 3 JPA repository interfaces.
+2024-04-17T06:41:34.949Z  INFO 1 --- [JobApplication] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)   
+2024-04-17T06:41:34.992Z  INFO 1 --- [JobApplication] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-17T06:41:34.993Z  INFO 1 --- [JobApplication] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-17T06:41:35.108Z  INFO 1 --- [JobApplication] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-17T06:41:35.112Z  INFO 1 --- [JobApplication] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4958 ms
+2024-04-17T06:41:35.549Z  INFO 1 --- [JobApplication] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-17T06:41:36.082Z  INFO 1 --- [JobApplication] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-04-17T06:41:36.087Z  INFO 1 --- [JobApplication] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-17T06:41:36.118Z  INFO 1 --- [JobApplication] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-04-17T06:41:36.621Z  INFO 1 --- [JobApplication] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-17T06:41:36.763Z  INFO 1 --- [JobApplication] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-17T06:41:36.866Z  INFO 1 --- [JobApplication] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled     
+2024-04-17T06:41:37.504Z  INFO 1 --- [JobApplication] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-17T06:41:40.153Z  INFO 1 --- [JobApplication] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table company (id bigint generated by default as identity, description varchar(255), name varchar(255), primary key (id))
+Hibernate: create table job (id bigint generated by default as identity, description varchar(255), location varchar(255), max_salary varchar(255), min_salary varchar(255), title varchar(255), company_id bigint, primary key (id))
+d bigint, primary key (id))
+Hibernate: alter table if exists job add constraint FK5q04favsasq8y70bsei7wv8fc foreign key (company_id) references company
+2024-04-17T06:41:40.343Z  INFO 1 --- [JobApplication] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-17T06:41:41.809Z  WARN 1 --- [JobApplication] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-17T06:41:44.024Z  INFO 1 --- [JobApplication] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2024-04-17T06:41:44.238Z  INFO 1 --- [JobApplication] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-17T06:41:44.282Z  INFO 1 --- [JobApplication] [           main] c.embark.JobApplication.JobApplication   : Started JobApplication in 15.382 seconds (process running for 16.493)
+PS C:\FrontEnd\SpringBoot\JobApplication> docker ps
+CONTAINER ID   IMAGE                      COMMAND              CREATED              STATUS              PORTS                    NAMES
+b74065d76b7a   harshada3010/jobappimage   "/cnb/process/web"   About a minute ago   Up About a minute   0.0.0.0:8080->8080/tcp   nice_dhawan
+PS C:\FrontEnd\SpringBoot\JobApplication> docker inspect b74065d76b7a
+[
+    {
+        "Id": "b74065d76b7a53a92322fcecc0a290633ae54788aa4c230030e6c05b4841321a",
+        "Created": "2024-04-17T06:41:26.704911461Z",
+        "Path": "/cnb/process/web",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 2135,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2024-04-17T06:41:27.46504585Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:f776c38d1aa4deb8cacc0d128cace906015a9900b679d5f653d318cee14b26d9",
+        "ResolvConfPath": "/var/lib/docker/containers/b74065d76b7a53a92322fcecc0a290633ae54788aa4c230030e6c05b4841321a/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/b74065d76b7a53a92322fcecc0a290633ae54788aa4c230030e6c05b4841321a/hostname",
+        "HostsPath": "/var/lib/docker/containers/b74065d76b7a53a92322fcecc0a290633ae54788aa4c230030e6c05b4841321a/hosts",
+        "LogPath": "/var/lib/docker/containers/b74065d76b7a53a92322fcecc0a290633ae54788aa4c230030e6c05b4841321a/b74065d76b7a53a92322fcecc0a290633ae54788aa4c230030e6c05b4841321a-json.log",
+        "Name": "/nice_dhawan",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {
+                "8080/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "8080"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                15,
+                158
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "host",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/a0548f9b44f16707e9c6b3142e8647dd7dcd4312b390e6fa2525ef868c224d68-init/diff:/var/lib/docker/overlay2/474a
+766a73023f26ead06b4114cb3d0df5d0ae435324b98b7bcb367d49c9e6b9/diff:/var/lib/docker/overlay2/ecbc57224baad5fcce3be02b959d88af2708d047cae6e6a3aafb4c304a797228/di
+ff:/var/lib/docker/overlay2/e8ff8bb9ca60e149b50fae5a9127af538428190963f633a3b33043f5c0fff285/diff:/var/lib/docker/overlay2/613a6e9ba83591ab9dfc287bbd8df937af1
+62c522634199832d9f9f9b56510a9/diff:/var/lib/docker/overlay2/95cb497416f0101e0893c562d39afcf9a9ffa06161374f312b929924f8579aa2/diff:/var/lib/docker/overlay2/aec
+982675d0e0cae2d9fa39237336b2195be5a71029f5d3655888eeb8f0c5862/diff:/var/lib/docker/overlay2/62414c0ef54e9b64adfb9cc4bb65d74c31b00495d27d4e25d17d5138e9c1f173/d
+iff:/var/lib/docker/overlay2/d3c9da8b4507fee5759ebbb3777ffc6cb69896e1eef64ff812f03f75bcf6deba/diff:/var/lib/docker/overlay2/4dc4d0b3ab9944e78084875b943e23c982
+007cb74d004c32dbbd5c9ddfed51a9/diff:/var/lib/docker/overlay2/98fab082b728b12d455cc6d2a7a6d10cf94a648c8eb3f7e679b4f83e32efe2b4/diff:/var/lib/docker/overlay2/dd
+84a4e497565642da4cf2b98b0c30bb2b13d03e818ed7f14ff28f39ccb52db2/diff:/var/lib/docker/overlay2/2b0a475e654e453c622090fa372122f5c823499fda0bf962e865de1491e7b473/
+diff:/var/lib/docker/overlay2/597b21cd2ee1c44743bdd5849339cc0f2375a9748ab7d9f226a8724939d369d9/diff:/var/lib/docker/overlay2/b8dd196b48ca12699366535f00564fc4d
+dbb9c5b22655591b7aff5f7d2f8cc7c/diff:/var/lib/docker/overlay2/60ae7017f4ca9973ba192f39c44e0c1c149b8db660b17184dda38d9b0bfbb7f0/diff:/var/lib/docker/overlay2/f
+6d120cfa11435174b2785016841eb660561a7bbd95fd65a83823b98e7693ced/diff:/var/lib/docker/overlay2/e0e61edafbaaa53882f99fab565d84ac224d3aef699155fb6e686b938d95a5ee
+/diff:/var/lib/docker/overlay2/76f566a06ad1878dc1b03b45543edf1151c8d3f57e6a6760ada643d963b9cbeb/diff:/var/lib/docker/overlay2/e65f6008bf6a78e9c09c1b1f58112fa4
+1ac87a1d5e43576262a70a8b0f217837/diff:/var/lib/docker/overlay2/58ced2cbc27f21a2470c8998e5347047fbc4e6ec4aa2519e7b67971d50a654be/diff:/var/lib/docker/overlay2/be3ba3f5f2966c6b0ca47e038020eb20f73283f0fe1e86239e2fe4269d4d62ba/diff",
+                "MergedDir": "/var/lib/docker/overlay2/a0548f9b44f16707e9c6b3142e8647dd7dcd4312b390e6fa2525ef868c224d68/merged",
+                "UpperDir": "/var/lib/docker/overlay2/a0548f9b44f16707e9c6b3142e8647dd7dcd4312b390e6fa2525ef868c224d68/diff",
+                "WorkDir": "/var/lib/docker/overlay2/a0548f9b44f16707e9c6b3142e8647dd7dcd4312b390e6fa2525ef868c224d68/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "b74065d76b7a",
+            "Domainname": "",
+            "User": "1002:1000",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/cnb/process:/cnb/lifecycle:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "CNB_LAYERS_DIR=/layers",
+                "CNB_APP_DIR=/workspace",
+                "CNB_PLATFORM_API=0.12",
+                "CNB_DEPRECATION_MODE=quiet"
+            ],
+            "Cmd": null,
+            "Image": "harshada3010/jobappimage",
+            "Volumes": null,
+            "WorkingDir": "/workspace",
+            "Entrypoint": [
+                "/cnb/process/web"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "io.buildpacks.build.metadata": "{\"buildpacks\":[{\"id\":\"paketo-buildpacks/ca-certificates\",\"version\":\"3.6.8\",\"homepage\":\"https://g
+ithub.com/paketo-buildpacks/ca-certificates\"},{\"id\":\"paketo-buildpacks/bellsoft-liberica\",\"version\":\"10.5.5\",\"homepage\":\"https://github.com/paketo
+-buildpacks/bellsoft-liberica\"},{\"id\":\"paketo-buildpacks/syft\",\"version\":\"1.45.0\",\"homepage\":\"https://github.com/paketo-buildpacks/syft\"},{\"id\"
+:\"paketo-buildpacks/executable-jar\",\"version\":\"6.8.5\",\"homepage\":\"https://github.com/paketo-buildpacks/executable-jar\"},{\"id\":\"paketo-buildpacks/
+dist-zip\",\"version\":\"5.6.10\",\"homepage\":\"https://github.com/paketo-buildpacks/dist-zip\"},{\"id\":\"paketo-buildpacks/spring-boot\",\"version\":\"5.27
+.11\",\"homepage\":\"https://github.com/paketo-buildpacks/spring-boot\"}],\"launcher\":{\"version\":\"0.19.3\",\"source\":{\"git\":{\"repository\":\"github.co
+m/buildpacks/lifecycle\",\"commit\":\"85f22a0f\"}}},\"processes\":[{\"type\":\"executable-jar\",\"command\":[\"java\"],\"args\":[\"org.springframework.boot.lo
+ader.launch.JarLauncher\"],\"direct\":true,\"buildpackID\":\"paketo-buildpacks/executable-jar\"},{\"type\":\"task\",\"command\":[\"java\"],\"args\":[\"org.spr
+ingframework.boot.loader.launch.JarLauncher\"],\"direct\":true,\"buildpackID\":\"paketo-buildpacks/executable-jar\"},{\"type\":\"web\",\"command\":[\"java\"],
+\"args\":[\"org.springframework.boot.loader.launch.JarLauncher\"],\"direct\":true,\"buildpackID\":\"paketo-buildpacks/executable-jar\"}],\"buildpack-default-process-type\":\"web\"}",
+                "io.buildpacks.lifecycle.metadata": "{\"app\":[{\"sha\":\"sha256:cff536778a3aeb2971dc67e23c7f4a3bc77eec651c93699cdfb4e3ce1c5b5d67\"},{\"sha\":
+\"sha256:6fa6b23cfe6bfbaf2c1d08a3b9ad29dd9db483db444adac4306668be58fd3a58\"},{\"sha\":\"sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6e
+f\"},{\"sha\":\"sha256:ed132bda8f49dd2386f8d18f3fa8bda09c00d6dbded4d49855c7bdc3d508b352\"},{\"sha\":\"sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6c
+ddfaf10ace3c6ef\"}],\"sbom\":{\"sha\":\"sha256:1e3b4126b9847a0d1f52267684aec8fa2b5a2d606749449f3a1c548ecfacfd0a\"},\"buildpacks\":[{\"key\":\"paketo-buildpack
+s/ca-certificates\",\"version\":\"3.6.8\",\"layers\":{\"helper\":{\"sha\":\"sha256:000f6b628e384ea6b9fde8f415eb5c2126f4cded9991888f5bb4e6d30e1a4b3d\",\"data\"
+:{\"buildpackInfo\":{\"clear-env\":false,\"description\":\"A Cloud Native Buildpack that adds custom CA certificates to a build and a created image\",\"homepa
+ge\":\"https://github.com/paketo-buildpacks/ca-certificates\",\"id\":\"paketo-buildpacks/ca-certificates\",\"keywords\":[\"ca-certificates\",\"trust\",\"certi
+ficates\"],\"licenses\":[{\"type\":\"Apache-2.0\",\"uri\":\"https://github.com/paketo-buildpacks/ca-certificates/blob/main/LICENSE\"}],\"name\":\"Paketo Build
+pack for CA Certificates\",\"sbom-formats\":[\"application/vnd.cyclonedx+json\",\"application/vnd.syft+json\"],\"version\":\"3.6.8\"},\"helperNames\":[\"ca-ce
+rtificates-helper\"]},\"build\":false,\"launch\":true,\"cache\":false}}},{\"key\":\"paketo-buildpacks/bellsoft-liberica\",\"version\":\"10.5.5\",\"layers\":{\
+"helper\":{\"sha\":\"sha256:e0fb984bfb5cc8b510ae180a9cbff0f789046fcc42514370675ed2c3ad787fee\",\"data\":{\"buildpackInfo\":{\"clear-env\":false,\"description\
+":\"A Cloud Native Buildpack that provides the Bellsoft Liberica implementations of JREs and JDKs\",\"homepage\":\"https://github.com/paketo-buildpacks/bellso
+ft-liberica\",\"id\":\"paketo-buildpacks/bellsoft-liberica\",\"keywords\":[\"java\",\"jvm\",\"jre\",\"jdk\"],\"licenses\":[{\"type\":\"Apache-2.0\",\"uri\":\"
+https://github.com/paketo-buildpacks/bellsoft-liberica/blob/main/LICENSE\"}],\"name\":\"Paketo Buildpack for BellSoft Liberica\",\"sbom-formats\":[\"applicati
+on/vnd.syft+json\",\"application/vnd.cyclonedx+json\"],\"version\":\"10.5.5\"},\"helperNames\":[\"active-processor-count\",\"java-opts\",\"jvm-heap\",\"link-l
+ocal-dns\",\"memory-calculator\",\"security-providers-configurer\",\"jmx\",\"jfr\",\"openssl-certificate-loader\",\"security-providers-classpath-9\",\"debug-9
+\",\"nmt\"]},\"build\":false,\"launch\":true,\"cache\":false},\"java-security-properties\":{\"sha\":\"sha256:bea0a3dc2651cac7c9c567a5cb4e7536107b357cb9113e880
+6f690f050500012\",\"data\":{\"clear-env\":false,\"description\":\"A Cloud Native Buildpack that provides the Bellsoft Liberica implementations of JREs and JDK
+s\",\"homepage\":\"https://github.com/paketo-buildpacks/bellsoft-liberica\",\"id\":\"paketo-buildpacks/bellsoft-liberica\",\"keywords\":[\"java\",\"jvm\",\"jr
+e\",\"jdk\"],\"licenses\":[{\"type\":\"Apache-2.0\",\"uri\":\"https://github.com/paketo-buildpacks/bellsoft-liberica/blob/main/LICENSE\"}],\"name\":\"Paketo B
+uildpack for BellSoft Liberica\",\"sbom-formats\":[\"application/vnd.syft+json\",\"application/vnd.cyclonedx+json\"],\"version\":\"10.5.5\"},\"build\":false,\
+"launch\":true,\"cache\":false},\"jre\":{\"sha\":\"sha256:8c6e466a53a4e6b54052848e8f75fbee6b11d9089c73bc05c0af46a1375ff85a\",\"data\":{\"cert-file\":\"82f3a63
+130e0b47915659d619f177c8157c2bbb29dbf0f58ad2721ff84fb1190\",\"dependency\":{\"cpes\":[\"cpe:2.3:a:oracle:jre:21.0.2:*:*:*:*:*:*:*\"],\"deprecation_date\":\"00
+01-01-01T00:00:00Z\",\"id\":\"jre\",\"licenses\":[{\"type\":\"GPL-2.0 WITH Classpath-exception-2.0\",\"uri\":\"https://openjdk.java.net/legal/gplv2+ce.html\"}
+],\"name\":\"BellSoft Liberica JRE\",\"purl\":\"pkg:generic/bellsoft-jre@21.0.2?arch=amd64\",\"sha256\":\"1c89720b8735587b9c689130da9450ee2f7af01b6e1daccfa43f
+fe91a953ef0a\",\"stacks\":[\"io.buildpacks.stacks.bionic\",\"io.paketo.stacks.tiny\",\"*\"],\"uri\":\"https://github.com/bell-sw/Liberica/releases/download/21
+.0.2+14/bellsoft-jre21.0.2+14-linux-amd64.tar.gz\",\"version\":\"21.0.2\"}},\"build\":false,\"launch\":true,\"cache\":false}}},{\"key\":\"paketo-buildpacks/sy
+ft\",\"version\":\"1.45.0\",\"layers\":{}},{\"key\":\"paketo-buildpacks/executable-jar\",\"version\":\"6.8.5\",\"layers\":{\"classpath\":{\"sha\":\"sha256:417
+e5bfc3c82b9373cf6804206e071d2fc74560df867d0f39cb21ac3d15231b6\",\"data\":{\"classpath\":[\"/workspace\"],\"launch\":true},\"build\":true,\"launch\":true,\"cac
+he\":false}}},{\"key\":\"paketo-buildpacks/dist-zip\",\"version\":\"5.6.10\",\"layers\":{}},{\"key\":\"paketo-buildpacks/spring-boot\",\"version\":\"5.27.11\"
+,\"layers\":{\"helper\":{\"sha\":\"sha256:fbf24054eaa8b9eb699f25b4a5eabbf89d4922c22bfad7f80f880e617723d9d0\",\"data\":{\"buildpackInfo\":{\"clear-env\":false,
+\"description\":\"A Cloud Native Buildpack that contributes Spring Boot dependency information and slices an application into multiple layers\",\"homepage\":\
+"https://github.com/paketo-buildpacks/spring-boot\",\"id\":\"paketo-buildpacks/spring-boot\",\"keywords\":[\"java\",\"spring\",\"spring-boot\"],\"licenses\":[
+{\"type\":\"Apache-2.0\",\"uri\":\"https://github.com/paketo-buildpacks/spring-boot/blob/main/LICENSE\"}],\"name\":\"Paketo Buildpack for Spring Boot\",\"sbom
+-formats\":[\"application/vnd.cyclonedx+json\",\"application/vnd.syft+json\"],\"version\":\"5.27.11\"},\"helperNames\":[\"spring-cloud-bindings\"]},\"build\":
+false,\"launch\":true,\"cache\":false},\"spring-cloud-bindings\":{\"sha\":\"sha256:ce4e86e0307e01ceb95d3abacfa3e157fb781571d00e698faccf6fe91ccd83ee\",\"data\"
+:{\"cpes\":[\"cpe:2.3:a:vmware:spring_cloud_bindings:2.0.0:*:*:*:*:*:*:*\"],\"deprecation_date\":\"0001-01-01T00:00:00Z\",\"id\":\"spring-cloud-bindings\",\"l
+icenses\":[{\"type\":\"Apache-2.0\",\"uri\":\"https://github.com/spring-cloud/spring-cloud-bindings/blob/main/LICENSE\"}],\"name\":\"Spring Cloud Bindings\",\
+"purl\":\"pkg:generic/springframework/spring-cloud-bindings@2.0.0\",\"sha256\":\"0390f964e9cadbb0795f44b2b29d2e6755bd8b800a94fee980aed8c26766c124\",\"stacks\"
+:[\"io.buildpacks.stacks.bionic\",\"io.paketo.stacks.tiny\",\"*\"],\"uri\":\"https://repo1.maven.org/maven2/org/springframework/cloud/spring-cloud-bindings/2.
+0.3/spring-cloud-bindings-2.0.3.jar\",\"version\":\"2.0.3\"},\"build\":false,\"launch\":true,\"cache\":false},\"web-application-type\":{\"sha\":\"sha256:366ce
+7d1a7f90f2e4ad08752f87510eee3ffca18736fa63c03823c8c4ebf2925\",\"data\":{\"files\":\"553407e1303863aeafbb5d7246b6014c3fad656aa2db9b077e29639137a1b74e\"},\"buil
+d\":false,\"launch\":true,\"cache\":false}}}],\"config\":{\"sha\":\"sha256:a881a77ec5607b609503e9309ec750b2bb226dc3df80320c69080496290fe380\"},\"launcher\":{\
+"sha\":\"sha256:92f1d3712a46e11688a8a106436d12fcb67b8382dade5ed6a9123f74b20f3369\"},\"process-types\":{\"sha\":\"sha256:1dc94a70dbaa2171fb086500a5d27797f77921
+9b126b0a1eebb9180c2792e80e\"},\"runImage\":{\"topLayer\":\"sha256:322d654f5f26b46002bb358183e353ee42375f1c63bdb8d11ea3a3bcc9c58d9f\",\"reference\":\"ec837947e
+a99a7c0d35daf10fa37304b7be62af258fe920ef12382cddb3c539e\",\"image\":\"index.docker.io/paketobuildpacks/run-jammy-base:latest\"},\"stack\":{\"runImage\":{\"image\":\"index.docker.io/paketobuildpacks/run-jammy-base:latest\"}}}",
+                "io.buildpacks.project.metadata": "{}",
+                "io.buildpacks.stack.description": "ubuntu:jammy with some common dependencies like tzdata and openssl",
+                "io.buildpacks.stack.distro.name": "ubuntu",
+                "io.buildpacks.stack.distro.version": "22.04",
+                "io.buildpacks.stack.homepage": "https://github.com/paketo-buildpacks/jammy-base-stack",
+                "io.buildpacks.stack.id": "io.buildpacks.stacks.jammy",
+                "io.buildpacks.stack.maintainer": "Paketo Buildpacks",
+                "io.buildpacks.stack.metadata": "{}",
+                "io.buildpacks.stack.released": "2024-04-16T02:35:43Z",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.title": "JobApplication",
+                "org.opencontainers.image.version": "0.0.1-SNAPSHOT",
+                "org.springframework.boot.version": "3.2.4"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "3bd8f2c322360493d95f9efba11c8601702e42cab9028ba0a30983a14e7fe61c",
+            "SandboxKey": "/var/run/docker/netns/3bd8f2c32236",
+            "Ports": {
+                "8080/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "8080"
+                    }
+                ]
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "99da05f742676e86b171a0ebf2adab5d34d20b47cbc3fa3dab1e28728d5efe72",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:02",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "MacAddress": "02:42:ac:11:00:02",
+                    "NetworkID": "b16e50cf83a50dee968a5c1f09bdf409b9b1de5c52cdf90f627e745e428adb5e",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DriverOpts": null,
+                    "DNSNames": null
+                }
+            }
+        }
+    }
+]
+PS C:\FrontEnd\SpringBoot\JobApplication> docker logs b74065d76b7a
+Setting Active Processor Count to 4
+Calculating JVM memory based on 2968268K available memory
+For more information on this calculation, see https://paketo.io/docs/reference/java-reference/#memory-calculator
+Calculated JVM Memory Configuration: -XX:MaxDirectMemorySize=10M -Xmx2343061K -XX:MaxMetaspaceSize=113206K -XX:ReservedCodeCacheSize=240M -Xss1M (Total Memory: 2968268K, Thread Count: 250, Loaded Class Count: 17573, Headroom: 0%)
+Enabling Java Native Memory Tracking
+Adding 137 container CA certificates to JVM truststore
+Spring Cloud Bindings Enabled
+Picked up JAVA_TOOL_OPTIONS: -Djava.security.properties=/layers/paketo-buildpacks_bellsoft-liberica/java-security-properties/java-security.properties -XX:+Exi
+tOnOutOfMemoryError -XX:ActiveProcessorCount=4 -XX:MaxDirectMemorySize=10M -Xmx2343061K -XX:MaxMetaspaceSize=113206K -XX:ReservedCodeCacheSize=240M -Xss1M -XX:+UnlockDiagnosticVMOptions -XX:NativeMemoryTracking=summary -XX:+PrintNMTStatistics -Dorg.springframework.cloud.bindings.boot.enable=true
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2024-04-17T06:41:29.933Z  INFO 1 --- [JobApplication] [           main] c.embark.JobApplication.JobApplication   : Starting JobApplication v0.0.1-SNAPSHOT using Java 21.0.2 with PID 1 (/workspace/BOOT-INF/classes started by cnb in /workspace)
+2024-04-17T06:41:29.939Z  INFO 1 --- [JobApplication] [           main] c.embark.JobApplication.JobApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-04-17T06:41:32.744Z  INFO 1 --- [JobApplication] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-17T06:41:32.892Z  INFO 1 --- [JobApplication] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 124 ms. Found 3 JPA repository interfaces.
+2024-04-17T06:41:34.949Z  INFO 1 --- [JobApplication] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)   
+2024-04-17T06:41:34.992Z  INFO 1 --- [JobApplication] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-17T06:41:34.993Z  INFO 1 --- [JobApplication] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-17T06:41:35.108Z  INFO 1 --- [JobApplication] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-17T06:41:35.112Z  INFO 1 --- [JobApplication] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4958 ms
+2024-04-17T06:41:35.549Z  INFO 1 --- [JobApplication] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-17T06:41:36.082Z  INFO 1 --- [JobApplication] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-04-17T06:41:36.087Z  INFO 1 --- [JobApplication] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-17T06:41:36.118Z  INFO 1 --- [JobApplication] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-04-17T06:41:36.621Z  INFO 1 --- [JobApplication] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-17T06:41:36.763Z  INFO 1 --- [JobApplication] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-17T06:41:36.866Z  INFO 1 --- [JobApplication] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled     
+2024-04-17T06:41:37.504Z  INFO 1 --- [JobApplication] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-17T06:41:40.153Z  INFO 1 --- [JobApplication] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table company (id bigint generated by default as identity, description varchar(255), name varchar(255), primary key (id))
+Hibernate: create table job (id bigint generated by default as identity, description varchar(255), location varchar(255), max_salary varchar(255), min_salary varchar(255), title varchar(255), company_id bigint, primary key (id))
+Hibernate: create table review (id bigint generated by default as identity, description varchar(255), rating float(53) not null, title varchar(255), company_id bigint, primary key (id))
+Hibernate: alter table if exists job add constraint FK5q04favsasq8y70bsei7wv8fc foreign key (company_id) references company
+Hibernate: alter table if exists review add constraint FK1r7rw4wp2mtlsn758pdi24qdx foreign key (company_id) references company
+2024-04-17T06:41:40.343Z  INFO 1 --- [JobApplication] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-17T06:41:41.809Z  WARN 1 --- [JobApplication] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-17T06:41:44.024Z  INFO 1 --- [JobApplication] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2024-04-17T06:41:44.238Z  INFO 1 --- [JobApplication] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-17T06:41:44.282Z  INFO 1 --- [JobApplication] [           main] c.embark.JobApplication.JobApplication   : Started JobApplication in 15.382 seconds (process running for 16.493)
+2024-04-17T06:42:52.195Z  INFO 1 --- [JobApplication] [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-17T06:42:52.196Z  INFO 1 --- [JobApplication] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'   
+2024-04-17T06:42:52.200Z  INFO 1 --- [JobApplication] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+Hibernate: select c1_0.id,c1_0.description,c1_0.name from company c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.description,c1_0.name from company c1_0
+Hibernate: insert into company (description,name,id) values (?,?,default)
+Hibernate: select j1_0.id,j1_0.company_id,j1_0.description,j1_0.location,j1_0.max_salary,j1_0.min_salary,j1_0.title from job j1_0
+Hibernate: select j1_0.id,c1_0.id,c1_0.description,c1_0.name,j1_0.description,j1_0.location,j1_0.max_salary,j1_0.min_salary,j1_0.title from job j1_0 left join company c1_0 on c1_0.id=j1_0.company_id where j1_0.id=?
+Hibernate: select c1_0.id,c1_0.description,c1_0.name from company c1_0 where c1_0.id=?
+Hibernate: insert into job (company_id,description,location,max_salary,min_salary,title,id) values (?,?,?,?,?,?,default)
+Hibernate: select c1_0.id,c1_0.description,c1_0.name from company c1_0 where c1_0.id=?
+Hibernate: select c1_0.id,c1_0.description,c1_0.name from company c1_0
+Hibernate: select r1_0.company_id,r1_0.id,r1_0.description,r1_0.rating,r1_0.title from review r1_0 where r1_0.company_id=?
+Hibernate: select c1_0.id,c1_0.description,c1_0.name from company c1_0 where c1_0.id=?
+Hibernate: insert into review (company_id,description,rating,title,id) values (?,?,?,?,default)
+Hibernate: select c1_0.id,c1_0.description,c1_0.name from company c1_0 where c1_0.id=?
+Hibernate: insert into review (company_id,description,rating,title,id) values (?,?,?,?,default)
+Hibernate: select c1_0.id,c1_0.description,c1_0.name from company c1_0 where c1_0.id=?
+Hibernate: insert into review (company_id,description,rating,title,id) values (?,?,?,?,default)
+Hibernate: select j1_0.id,j1_0.company_id,j1_0.description,j1_0.location,j1_0.max_salary,j1_0.min_salary,j1_0.title from job j1_0
+Hibernate: select c1_0.id,c1_0.description,c1_0.name from company c1_0 where c1_0.id=?
+Hibernate: select r1_0.company_id,r1_0.id,r1_0.description,r1_0.rating,r1_0.title from review r1_0 where r1_0.company_id=?
+PS C:\FrontEnd\SpringBoot\JobApplication> 
+

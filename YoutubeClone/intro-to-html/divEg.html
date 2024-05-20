@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .red{
+            width:100px;
+            height: 100px;
+            background-color: red;
+            margin-bottom: 20px;
+        }
+        .green{
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            background-color: green;
+            margin-bottom: 20px;
+        }
+        .feedbackOpt{
+            padding : 0px 15px 0px 15px;
+            border: 1px solid black;
+            width: 300px;   
+            vertical-align: middle;
+            font-family: Arial;
+            margin-bottom: 20px;
+        }
+
+        .button{
+            margin-bottom: 20px;
+        }
+
+        .youtube{
+            width: 350px;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            font-family: Arial;
+            margin-bottom: 20px;
+
+        }
+        .youtube-title{
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .youtubeDesc{
+            font-size: 15px;
+            color: rgb(203, 197, 197);
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        .cat-preview{
+            display: inline-block;
+            font-family: Arial, Roboto,sans-serif;
+            font-size: small;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            box-shadow: 10px 10px 10px rgba(0,0,0,0.2);
+        }
+
+        .cat-preview:hover{
+            box-shadow: 0px 4px 10px 0px rgba(172, 167, 167, 0.5);
+            transition: boxshadow 0.15s;
+        }
+        .cat-image{
+           width: 150px;
+           height: 150px;
+           margin-bottom: 5px;
+        }
+
+        .cat-name{
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        .mutual{
+            margin-bottom: 10px;
+            margin-top: 0;
+            margin-left: 5px;
+        }
+
+        .AddFriend{
+            background-color: rgb(53, 121, 249);
+            color: white;
+            padding: 10px 13px;
+            border: none;
+            border-radius: 3px;
+            margin-left: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .tweet-searching{
+            border-radius: 10px;
+            padding: 15px 140px;
+            text-align: left;
+        }
+
+        .tweet-catimage{
+            border-radius: 200px;
+            width: 10%;
+        
+
+        }
+        .tweet-button{
+            border-radius: 15px;
+            border: none;
+            background-color: rgb(64, 143, 239);
+            color: white;
+            padding: 8px 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="red">
+
+    </div>
+    <div class="green">
+
+    </div>
+    <div class="feedbackOpt">
+        <p class="feedback">Satisfied with our services?</p>
+        <button class="button">Yes</button>
+        <button class="button">No</button>
+        
+    </div>
+
+    <div class="youtube">
+        <p class="youtube-title">
+            Install YouTube Music
+        </p>
+        <p class="youtubeDesc">Add youtube music to your desktop for quick and easy access</p>
+    </div>
+
+    <div class="cat-preview">
+        <img class="cat-image" src="images/cat-1.jpg">
+        <p class="cat-name">Oliver</p>
+        <p class="mutual">2 mutual friends</p>
+        <button class="AddFriend">Add Friend</button>
+    </div>
+
+    <div class="cat-preview">
+        <img class="cat-image" src="images/cat-2.jpg">
+        <p class="cat-name">Mimi</p>
+        <p class="mutual">3 mutual friends</p>
+        <button class="AddFriend">Add Friend</button>
+        
+    </div>
+
+    <div class="cat-preview">
+        <img class="cat-image" src="images/cat-3.jpg">
+        <p class="cat-name">Rex</p>
+        <p class="mutual">4 mutual friends</p>
+        <button class="AddFriend">Add Friend</button>
+        
+    </div>
+
+
+    <div class="tweet">
+        <img class="tweet-catimage" src="images/cat-1.jpg">
+        <input class="tweet-searching" type="text" placeholder="What's happening?">
+        <button class="tweet-button">Tweet</button>
+    </div>
+    
+</body>
+</html>

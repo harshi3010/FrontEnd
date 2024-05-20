@@ -1,0 +1,115 @@
+1. When I was adding companies and their reviews, job objects is not updated with all the companies and reviews.. it is taking one company and one reviews
+2. Once we delete any company from the database or postman, so particular id is not taking in same instance again. for both review and company
+Actuator
+1. health
+2. metrics
+3. info
+4. loggers
+5. beans
+6. threaddump
+7. shutdown
+8. env
+9. configprops
+10. caches
+11. headdump
+12. mapping
+
+
+./mnvw spring-boot:build-image "-Dspring-boot.build-image.imageName=<IMAGE-NAME>"
+maven wrapper script - execute the command - ./mvnw
+maven goal - provide by springboot maven plug-in and this goal builds a docker image from the spring boot application using cloud native buildpacks - spring-boot:build-image
+1. first it will converted into jar file
+2. then it will be transferred over the image
+java system property which being passed to spring boot build image goal so this is the image goal that we have and we are passing this entire property to it okay and
+(-D) flag is used to define the system property set the image name over here in the proerty variable name (imageName) = <IMAGE-NAME> - value)
+ So the images which will be created over this name"-Dspring-boot.build-image.imageName=<IMAGE-NAME>"
+
+ docker push harshada3010/jobappimage - inorder to push docker image on hub u need to first login to docker cli - docker login
+ username - harshada3010
+ password - Mahavir@1
+
+ Docker commands
+docker pull <image>
+docker push <username/image>
+docker run -it -d -p <host-port>:<container-port> --name <name> <image>
+this command is used to run docker container from the image
+-it - interactive
+-d - stands for detached mood - if you run on nondetached mood u can't run anything from this terminal
+and if you close a terminal it will stop ---if you run on detached mood --it will run as seperate process
+-p - stands for port mapping - map the port of container to that of host machine
+--name  -- name of the process and <image> and image
+
+docker stop <container-id/container-name>
+docker start <container-id/container-name> - start container
+docker rm <container-id/container-name> - to remove stop container -to delete stopped container
+docker rmi <image-id/image-name> - to remove image from the local storage,images which u create occupies a local storage -you can get rid of that
+docker ps - used to get running docker container - gives you all the container which is running
+docker ps -a  - (used to show all the docker container which are stopped and running
+docker images - used to list all images in the host
+docker exec -it <container-name/container-id> bash  ---enables you to access the running container
+if you want to login to running container through terminal you can use this command
+docker build -t <username/image> -this is used to build an image from the docker file --if you have docker file defined in registry/in your current directory
+docker logs <container-name/container-id> - logs of container that are running and the container that exists
+docker inspect <container-name/container-id> - which gives you a detail information of particular container
+
+ctrl + c - forcefully stop application through terminal
+
+POSTGRE SQL
+
+2 docker images required - and to communicate between them we have concept of docker network
+1.postgresql.org
+2. pgadmin
+
+to add this image in our spring boot application project/docker container
+docker run -d
+
+1. docker run -d --name db -e POSTGRES_PASSWORD=harshi postgres
+--docker login -if failed
+2. docker run -d --name pgadmin -e PGADMIN_DEFAULT_EMAIL=harshi -e PGADMIN_DEFAULT_PASSWORD=harshi dpage/pgadmin4
+
+docker exec -it pgadmin ping db
+-tool to check the reachability of network
+
+ERROR - ping: bad address 'db'
+You dont have network connectivity between these two container
+-f - force
+docker rm -f db pgadmin
+
+USING NETWORKS
+docker network create my-network
+
+docker run -d --name db --network my-network -e POSTGRES_PASSWORD=harshi postgres
+
+docker run -d --name pgadmin --network my-network -e PGADMIN_DEFAULT_EMAIL=user@domain.com -e PGADMIN_DEFAULT_PASSWORD=harshi
+dpage/pgadmin4
+
+docker exec -it pgadmin ping db
+
+docker network -helps you to communicate between networks - pgadmin with postgres example
+
+Start the POSTGRESQL service
+docker run -d \
+   --name postgres_container \
+   -e POSTGRES_USER=harshi  \
+   -e POSTGRES_PASSWORD=harshi \
+   -e PGDATA=/data/postgres \
+   -v postgres:/data/postgres \
+   -p 5432:5432 \
+   --network postgres \
+   --restart unless-stopped \
+   postgres
+
+Start the pgAdmin service:
+
+docker run -d \
+  --name pgadmin_container \
+  -e PGADMIN_DEFAULT_EMAIL=pdadmin4@pgadmin.org \
+  -e PGADMIN_DEFAULT_PASSWORD=admin \
+  -e PGADMIN_CONFIG_SERVER_MODE=False \
+  -v pgadmin:/var/lib/pgadmin \
+  -p 5050:80 \
+  --network postgres \
+  --restart unless-stopped \
+  dpage/pgadmin4
+
+
